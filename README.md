@@ -7,7 +7,9 @@ The controller part of Chameleon is hosted in the [chameleon-controller](https:/
 
 ## Architecture
 
-<img src="images/chameleon.png" width="700">
+<p align="center">
+<img src="images/chameleon.png" width="650">
+</p>
 
 Chameleon relies on source routing for providing predictable latency in programmable networks.
 Servers (i.e., end hosts) run virtual machines (VMs) that wish to communicate with each other in the network.
@@ -16,7 +18,9 @@ Packets sent by VMs are captured in a virtual switch that is responsible for tag
 The tags the virtual switch adds correspond to the successive actions the switches in the network must take when they receive the packet.
 Each time a switch receives a packet, it outputs it to a particular output port and queue based on the outermost VLAN tag and pops the latter.
 
-<img src="images/chameleon-vswitch.png" width="500">
+<p align="center">
+<img src="images/chameleon-vswitch.png" width="450">
+</p>
 
 The VMs on a server run in *QEMU* with *KVM*.
 The virtual switch of the VMs hypervisor is implemented as a *DPDK* application running in a privileged docker container.
